@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+button{
+    background:#46daea !important;
+    color:black;
+    font-weight:bold;
+    transition: ease-in-out 0.3s;
+    padding: 10px 20px;
+
+}
+button:hover{
+    background:#0f9cae !important;
+    color:white;
+    font-weight:bold;
+    transition: ease-in-out 0.3s;
+}
+#departments .department-tab {
+    display: flex;
+    align-items: center;
+    min-height: 48px;
+    border-radius: 12px;
+    background:transparent !important;
+    color:#334155 !important;
+    padding:10px 20px !important;
+    text-align: left;
+    white-space: nowrap;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+#departments .department-tab:hover,
+#departments .department-tab.is-active {
+    background:#0f9cae !important;
+    color:white !important;
+}
+#departments .department-tab:focus-visible {
+    outline: 3px solid #67e8f9;
+    outline-offset: 2px;
+}
+
+@media (min-width: 768px) {
+    #departments .department-tab {
+        width: 100%;
+    }
+}

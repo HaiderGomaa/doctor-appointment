@@ -1,0 +1,119 @@
+.logout-page {
+  display: grid;
+  min-height: calc(100vh - 82px);
+  place-items: center;
+  padding: 40px 20px;
+  background:
+    radial-gradient(circle at 15% 15%, rgba(103, 232, 249, 0.18), transparent 28%),
+    #f4f9fa;
+}
+
+.logout-card {
+  width: min(100%, 480px);
+  padding: 48px;
+  border: 1px solid #e1edef;
+  border-radius: 24px;
+  background: #fff;
+  box-shadow: 0 24px 70px rgba(20, 72, 81, 0.12);
+  text-align: center;
+}
+
+.logout-mark {
+  display: grid;
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 24px;
+  place-items: center;
+  border-radius: 18px;
+  background: #e9f8f8;
+  color: #087f8c;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.logout-mark svg {
+  width: 26px;
+  height: 26px;
+}
+
+.logout-eyebrow {
+  margin: 0 0 12px;
+  color: #087f8c;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.logout-card h1 {
+  margin: 0;
+  color: #12363d;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.logout-copy {
+  margin: 14px 0 28px;
+  color: #64748b;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.logout-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.logout-actions .logout-confirm,
+.logout-actions .logout-cancel {
+  min-height: 48px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 180ms ease, color 180ms ease;
+}
+
+.logout-actions .logout-confirm {
+  border: 0;
+  background: #0f9cae !important;
+  color: #fff !important;
+}
+
+.logout-actions .logout-confirm:hover {
+  background: #087f8c !important;
+}
+
+.logout-actions .logout-cancel {
+  border: 1px solid #d5e2e5;
+  background: #fff !important;
+  color: #475569 !important;
+}
+
+.logout-actions .logout-cancel:hover {
+  background: #f4f9fa !important;
+}
+
+.logout-actions button:focus-visible {
+  outline: 3px solid #67e8f9;
+  outline-offset: 3px;
+}
+
+@media (max-width: 700px) {
+  .logout-page {
+    min-height: calc(100vh - 72px);
+    padding: 28px 16px;
+  }
+
+  .logout-card {
+    padding: 36px 26px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logout-actions .logout-confirm,
+  .logout-actions .logout-cancel {
+    transition: none;
+  }
+}

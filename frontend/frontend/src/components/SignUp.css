@@ -1,0 +1,49 @@
+.signup-page {
+  padding-top: 36px;
+  padding-bottom: 36px;
+}
+
+.signup-card {
+  width: min(100%, 560px);
+}
+
+.signup-welcome {
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+.signup-welcome .login-mark {
+  margin-bottom: 14px;
+}
+
+.signup-welcome h1 {
+  font-size: 28px;
+}
+
+.signup-form-panel {
+  padding-top: 28px;
+  padding-bottom: 32px;
+}
+
+.signup-form-panel .login-intro {
+  margin-bottom: 22px;
+}
+
+.signup-form-panel .login-form input {
+  margin-bottom: 16px;
+}
+
+@media (max-width: 760px) {
+  .signup-page {
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+
+  .signup-welcome {
+    padding: 22px 30px;
+  }
+
+  .signup-form-panel {
+    padding: 26px 30px 30px;
+  }
+}

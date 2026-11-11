@@ -1,0 +1,232 @@
+.add-department-page {
+  min-height: calc(100vh - 82px);
+  padding: 56px 24px 72px;
+  background:
+    radial-gradient(circle at 8% 12%, rgba(103, 232, 249, 0.16), transparent 25%),
+    #f4f9fa;
+}
+
+.add-department-heading,
+.add-department-card {
+  width: min(100%, 760px);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.add-department-heading {
+  margin-bottom: 30px;
+}
+
+.add-department-eyebrow {
+  margin: 0 0 10px;
+  color: #087f8c;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.add-department-heading h1 {
+  margin: 0;
+  color: #12363d;
+  font-size: clamp(32px, 5vw, 42px);
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.add-department-heading > p:last-child {
+  max-width: 620px;
+  margin: 12px 0 0;
+  color: #64748b;
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.add-department-card {
+  padding: 34px;
+  border: 1px solid #e1edef;
+  border-radius: 22px;
+  background: #fff;
+  box-shadow: 0 18px 48px rgba(20, 72, 81, 0.08);
+}
+
+.add-department-card-heading {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 30px;
+}
+
+.add-department-icon {
+  display: grid;
+  flex: 0 0 46px;
+  width: 46px;
+  height: 46px;
+  place-items: center;
+  border-radius: 15px;
+  background: #e9f8f8;
+  color: #087f8c;
+  font-size: 29px;
+  font-weight: 400;
+}
+
+.add-department-card-heading h2 {
+  margin: 0;
+  color: #12363d;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.add-department-card-heading p {
+  margin: 6px 0 0;
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.add-department-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.add-department-form label {
+  margin: 0 0 8px;
+  color: #334155;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.add-department-form label span {
+  color: #94a3b8;
+  font-weight: 400;
+}
+
+.add-department-form input,
+.add-department-form textarea {
+  width: 100%;
+  margin: 0 0 22px;
+  border: 1px solid #d5e2e5;
+  border-radius: 10px;
+  background: #fff;
+  color: #12363d;
+  font: inherit;
+  transition: border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.add-department-form input[type="text"] {
+  min-height: 48px;
+  padding: 0 14px;
+}
+
+.add-department-form input[type="file"] {
+  min-height: 48px;
+  padding: 9px 12px;
+  color: #64748b;
+}
+
+.add-department-form input[type="file"]::file-selector-button {
+  margin-right: 12px;
+  padding: 7px 11px;
+  border: 0;
+  border-radius: 7px;
+  background: #e9f8f8;
+  color: #087f8c;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.add-department-form textarea {
+  min-height: 120px;
+  padding: 12px 14px;
+  resize: vertical;
+}
+
+.add-department-form input:focus,
+.add-department-form textarea:focus {
+  border-color: #0f9cae;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(15, 156, 174, 0.14);
+}
+
+.add-department-file-name {
+  margin: -14px 0 20px;
+  color: #64748b;
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+
+.add-department-message {
+  margin: -4px 0 18px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.add-department-message a {
+  color: inherit;
+  font-weight: 700;
+}
+
+.add-department-message.is-error {
+  background: #fff1f0;
+  color: #b42318;
+}
+
+.add-department-message.is-success {
+  background: #ecfdf3;
+  color: #067647;
+}
+
+.add-department-form .add-department-submit {
+  min-height: 50px;
+  margin-top: 2px;
+  border: 0;
+  border-radius: 10px;
+  background: #0f9cae !important;
+  color: #fff !important;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 180ms ease, transform 180ms ease;
+}
+
+.add-department-form .add-department-submit:hover {
+  background: #087f8c !important;
+  transform: translateY(-1px);
+}
+
+.add-department-form .add-department-submit:disabled {
+  opacity: 0.65;
+  cursor: wait;
+  transform: none;
+}
+
+@media (max-width: 700px) {
+  .add-department-page {
+    min-height: calc(100vh - 72px);
+    padding: 38px 16px 52px;
+  }
+
+  .add-department-card {
+    padding: 26px 22px;
+    border-radius: 18px;
+  }
+
+  .add-department-card-heading {
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+
+  .add-department-card-heading h2 {
+    font-size: 19px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .add-department-form input,
+  .add-department-form textarea,
+  .add-department-form .add-department-submit {
+    transition: none;
+  }
+}

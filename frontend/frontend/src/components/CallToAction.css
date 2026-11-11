@@ -1,0 +1,110 @@
+.home-cta {
+  position: relative;
+  display: flex;
+  width: min(calc(100% - 48px), 1120px);
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  overflow: hidden;
+  margin: 48px auto;
+  padding: 38px 44px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 90% 15%, rgba(103, 232, 249, 0.28), transparent 30%),
+    linear-gradient(120deg, #087f8c, #075b69);
+  box-shadow: 0 20px 44px rgba(8, 127, 140, 0.2);
+}
+
+.home-cta-content {
+  position: relative;
+  z-index: 1;
+  max-width: 650px;
+}
+
+.home-cta-eyebrow {
+  margin: 0 0 10px;
+  color: #baf3f1;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.home-cta h2 {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(24px, 3.2vw, 34px);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.home-cta-description {
+  max-width: 600px;
+  margin: 12px 0 0;
+  color: rgba(255, 255, 255, 0.84);
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.home-cta-button {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  flex: 0 0 auto;
+  min-height: 50px;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 0 20px;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 12px;
+  background: #fff;
+  color: #087f8c;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background-color 180ms ease, transform 180ms ease;
+}
+
+.home-cta-button:hover {
+  transform: translateY(-2px);
+  background: #e9f8f8;
+}
+
+.home-cta-button:focus-visible {
+  outline: 3px solid #67e8f9;
+  outline-offset: 4px;
+}
+
+.home-cta-button svg {
+  width: 18px;
+  height: 18px;
+  transition: transform 180ms ease;
+}
+
+.home-cta-button:hover svg {
+  transform: translateX(3px);
+}
+
+@media (max-width: 700px) {
+  .home-cta {
+    width: calc(100% - 32px);
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 22px;
+    margin: 32px auto;
+    padding: 30px 24px;
+    border-radius: 20px;
+  }
+
+  .home-cta-button {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-cta-button,
+  .home-cta-button svg {
+    transition: none;
+  }
+}

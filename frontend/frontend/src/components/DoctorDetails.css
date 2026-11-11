@@ -1,0 +1,255 @@
+.doctor-details-page {
+  min-height: calc(100vh - 82px);
+  padding: 48px 24px 72px;
+  background:
+    radial-gradient(circle at 8% 12%, rgba(103, 232, 249, 0.16), transparent 25%),
+    #f4f9fa;
+}
+
+.doctor-details-container {
+  width: min(100%, 1000px);
+  margin: 0 auto;
+}
+
+.doctor-details-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 22px;
+  color: #087f8c;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.doctor-details-back:hover {
+  color: #075b69;
+}
+
+.doctor-details-back:focus-visible,
+.doctor-details-state a:focus-visible,
+.doctor-profile-book:focus-visible {
+  outline: 3px solid #67e8f9;
+  outline-offset: 3px;
+}
+
+.doctor-details-state {
+  padding: 48px 24px;
+  border: 1px dashed #cbdde0;
+  border-radius: 18px;
+  background: #fff;
+  color: #64748b;
+  text-align: center;
+}
+
+.doctor-details-state h1 {
+  margin: 0;
+  color: #12363d;
+  font-size: 24px;
+}
+
+.doctor-details-state p {
+  margin: 10px 0 18px;
+}
+
+.doctor-details-state a {
+  color: #087f8c;
+  font-weight: 700;
+}
+
+.doctor-details-state.is-error {
+  border-color: #fecaca;
+  background: #fff7f6;
+}
+
+.doctor-profile {
+  overflow: hidden;
+  border: 1px solid #e1edef;
+  border-radius: 24px;
+  background: #fff;
+  box-shadow: 0 20px 56px rgba(20, 72, 81, 0.1);
+}
+
+.doctor-profile-header {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  padding: 40px;
+  background:
+    radial-gradient(circle at 90% 10%, rgba(103, 232, 249, 0.3), transparent 32%),
+    linear-gradient(135deg, #effafb, #f8fcfc);
+}
+
+.doctor-profile-photo {
+  position: relative;
+  display: grid;
+  flex: 0 0 180px;
+  width: 180px;
+  height: 180px;
+  overflow: hidden;
+  place-items: center;
+  border: 6px solid #fff;
+  border-radius: 50%;
+  background: #d7f0f2;
+  box-shadow: 0 10px 28px rgba(20, 72, 81, 0.14);
+  color: #087f8c;
+  font-size: 48px;
+  font-weight: 700;
+}
+
+.doctor-profile-photo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.doctor-profile-eyebrow {
+  margin: 0 0 10px;
+  color: #087f8c;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.doctor-profile-intro h1 {
+  margin: 0;
+  color: #12363d;
+  font-size: clamp(30px, 5vw, 42px);
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.doctor-profile-specialty {
+  display: inline-flex;
+  margin-top: 16px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: #e0f5f5;
+  color: #087f8c;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.doctor-profile-content {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 260px;
+  gap: 40px;
+  padding: 40px;
+}
+
+.doctor-profile-about h2 {
+  margin: 0 0 14px;
+  color: #12363d;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.doctor-profile-about p {
+  margin: 0;
+  color: #64748b;
+  font-size: 16px;
+  line-height: 1.8;
+  white-space: pre-line;
+}
+
+.doctor-profile-aside {
+  align-self: start;
+  padding: 20px;
+  border: 1px solid #e3eff0;
+  border-radius: 16px;
+  background: #f8fcfc;
+}
+
+.doctor-profile-experience {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.doctor-profile-experience-icon {
+  display: grid;
+  flex: 0 0 42px;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border-radius: 13px;
+  background: #e0f5f5;
+  color: #087f8c;
+}
+
+.doctor-profile-experience-icon svg {
+  width: 21px;
+  height: 21px;
+}
+
+.doctor-profile-experience div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.doctor-profile-experience div span {
+  color: #64748b;
+  font-size: 12px;
+}
+
+.doctor-profile-experience div strong {
+  color: #12363d;
+  font-size: 16px;
+}
+
+.doctor-profile-book {
+  display: flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: #0f9cae;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 180ms ease, transform 180ms ease;
+}
+
+.doctor-profile-book:hover {
+  transform: translateY(-1px);
+  background: #087f8c;
+}
+
+@media (max-width: 700px) {
+  .doctor-details-page {
+    min-height: calc(100vh - 72px);
+    padding: 32px 16px 48px;
+  }
+
+  .doctor-profile-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 22px;
+    padding: 28px 24px;
+  }
+
+  .doctor-profile-photo {
+    flex-basis: 132px;
+    width: 132px;
+    height: 132px;
+    font-size: 38px;
+  }
+
+  .doctor-profile-content {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding: 28px 24px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .doctor-profile-book {
+    transition: none;
+  }
+}
