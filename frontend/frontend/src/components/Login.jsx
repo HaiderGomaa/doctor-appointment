@@ -71,6 +71,7 @@ function Login() {
               type="email"
               name="email"
               autoComplete="email"
+              maxLength={254}
               placeholder="you@example.com"
               value={email}
               onChange={(event) => setEmail(event.target.value)}
@@ -83,6 +84,7 @@ function Login() {
               type="password"
               name="password"
               autoComplete="current-password"
+              maxLength={72}
               placeholder="Enter your password"
               value={password}
               onChange={(event) => setPassword(event.target.value)}

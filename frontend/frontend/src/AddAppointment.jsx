@@ -254,6 +254,8 @@ function AddAppointment() {
               value={reason}
               onChange={(event) => setReason(event.target.value)}
               placeholder="Briefly describe what you need help with"
+              minLength={5}
+              maxLength={1000}
               rows={4}
               required
             />

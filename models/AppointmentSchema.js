@@ -16,7 +16,10 @@ const AppointmentSchema = new mongoose.Schema({
     },
     reason: {
         type: String,
-        required: true
+        required: true,
+        trim: true,
+        minlength: 5,
+        maxlength: 1000
     }
 });
 const Appointment = mongoose.model("Appointment", AppointmentSchema);

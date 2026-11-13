@@ -122,6 +122,8 @@ function AddDoctor() {
                 name="name"
                 type="text"
                 autoComplete="name"
+                minLength={2}
+                maxLength={100}
                 placeholder="e.g. Dr. Alex Morgan"
                 value={name}
                 onChange={(event) => setName(event.target.value)}
@@ -135,6 +137,8 @@ function AddDoctor() {
                 id="doctor-specialty"
                 name="specialty"
                 type="text"
+                minLength={2}
+                maxLength={100}
                 placeholder="e.g. Cardiology"
                 value={specialty}
                 onChange={(event) => setSpecialty(event.target.value)}
@@ -149,6 +153,7 @@ function AddDoctor() {
                 name="experienceYear"
                 type="number"
                 min="0"
+                max="100"
                 step="1"
                 placeholder="e.g. 8"
                 value={experienceYear}
@@ -163,6 +168,8 @@ function AddDoctor() {
                 id="doctor-description"
                 name="description"
                 placeholder="Share the doctor's experience, approach, and areas of care"
+                minLength={5}
+                maxLength={2000}
                 value={description}
                 onChange={(event) => setDescription(event.target.value)}
                 rows={5}
@@ -178,7 +185,17 @@ function AddDoctor() {
                 name="image"
                 type="file"
                 accept="image/*"
-                onChange={(event) => setImage(event.target.files?.[0] || null)}
+                onChange={(event) => {
+                  const selectedImage = event.target.files?.[0] || null;
+                  if (selectedImage && selectedImage.size > 5 * 1024 * 1024) {
+                    setError("Profile photo must be 5 MB or smaller.");
+                    setImage(null);
+                    setImageInputKey((key) => key + 1);
+                    return;
+                  }
+                  setError("");
+                  setImage(selectedImage);
+                }}
                 required
               />
               {image && (

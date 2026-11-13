@@ -1,5 +1,6 @@
 import express from "express";
 import multer from "multer";
+import mongoose from "mongoose";
 import Deprtments from "../models/DepertmemtsSchema.js";
 import authenticateToken from "../auth/middleware.js";
 const router = express.Router();
@@ -12,13 +13,36 @@ const storage = multer.diskStorage({
         cb(null, Date.now() + "-" + file.originalname);
     }
 });
-const upload = multer({ storage });
-router.post("/addDepertments", authenticateToken("admin"), upload.single("image"), async (req, res) => {
+const upload = multer({
+    storage,
+    limits: { fileSize: 5 * 1024 * 1024 },
+    fileFilter: (req, file, callback) => {
+        if (!file.mimetype.startsWith("image/")) {
+            callback(new Error("Department image must be an image"));
+            return;
+        }
+        callback(null, true);
+    }
+});
+const uploadDepartmentImage = (req, res, next) => {
+    upload.single("image")(req, res, (error) => {
+        if (error) {
+            return res.status(400).json({ error: error.message });
+        }
+        next();
+    });
+};
+router.post("/addDepertments", authenticateToken("admin"), uploadDepartmentImage, async (req, res) => {
     try {
-        const { name, description } = req.body;
-        const imagePath = req.file ? req.file.filename : null;
-        if (!name ) {
-            return res.status(400).json({ error: "Please provide all required fields" });
+        const { name: rawName, description: rawDescription } = req.body || {};
+        const name = typeof rawName === "string" ? rawName.trim() : "";
+        const description = typeof rawDescription === "string" ? rawDescription.trim() : "";
+        const imagePath = req.file ? req.file.filename : "";
+        if (name.length < 2 || name.length > 100) {
+            return res.status(400).json({ error: "Department name must be between 2 and 100 characters" });
+        }
+        if (description.length > 1000) {
+            return res.status(400).json({ error: "Description cannot exceed 1000 characters" });
         }
         const newDepertment = await Deprtments.create({
             name,
@@ -50,6 +74,9 @@ router.get("/countDepertments", async (req, res) => {
     }
 });
 router.get("/:id", authenticateToken, async (req, res) => {
+    if (!mongoose.isValidObjectId(req.params.id)) {
+        return res.status(400).json({ error: "Please provide a valid department ID" });
+    }
     try {
         const depertment = await Deprtments.findById(req.params.id);
         if (!depertment) {
@@ -62,6 +89,9 @@ router.get("/:id", authenticateToken, async (req, res) => {
     }
 });
 router.delete("/deleteDepertment/:id", authenticateToken, async (req, res) => {
+    if (!mongoose.isValidObjectId(req.params.id)) {
+        return res.status(400).json({ error: "Please provide a valid department ID" });
+    }
     try {
         const depertment = await Deprtments.findByIdAndDelete(req.params.id);
         if (!depertment) {

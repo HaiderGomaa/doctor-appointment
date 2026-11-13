@@ -116,6 +116,8 @@ function AddDepertment() {
             id="department-name"
             name="name"
             type="text"
+            minLength={2}
+            maxLength={100}
             placeholder="e.g. Cardiology"
             value={name}
             onChange={(event) => setName(event.target.value)}
@@ -129,6 +131,7 @@ function AddDepertment() {
             id="department-description"
             name="description"
             placeholder="Describe the services provided by this department"
+            maxLength={1000}
             value={description}
             onChange={(event) => setDescription(event.target.value)}
             rows={5}
@@ -143,7 +146,17 @@ function AddDepertment() {
             name="image"
             type="file"
             accept="image/*"
-            onChange={(event) => setImage(event.target.files?.[0] || null)}
+            onChange={(event) => {
+              const selectedImage = event.target.files?.[0] || null;
+              if (selectedImage && selectedImage.size > 5 * 1024 * 1024) {
+                setError("Department image must be 5 MB or smaller.");
+                setImage(null);
+                setImageInputKey((key) => key + 1);
+                return;
+              }
+              setError("");
+              setImage(selectedImage);
+            }}
           />
           {image && (
             <p className="add-department-file-name">

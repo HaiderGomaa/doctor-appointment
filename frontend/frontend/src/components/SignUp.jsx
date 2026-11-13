@@ -80,6 +80,8 @@ function SignUp() {
               type="text"
               name="name"
               autoComplete="name"
+              minLength={2}
+              maxLength={100}
               placeholder="Your full name"
               value={name}
               onChange={(event) => setName(event.target.value)}
@@ -92,6 +94,7 @@ function SignUp() {
               type="email"
               name="email"
               autoComplete="email"
+              maxLength={254}
               placeholder="you@example.com"
               value={email}
               onChange={(event) => setEmail(event.target.value)}
@@ -104,6 +107,8 @@ function SignUp() {
               type="password"
               name="password"
               autoComplete="new-password"
+              minLength={8}
+              maxLength={72}
               placeholder="Create a password"
               value={password}
               onChange={(event) => setPassword(event.target.value)}
@@ -116,6 +121,8 @@ function SignUp() {
               type="password"
               name="confirmPassword"
               autoComplete="new-password"
+              minLength={8}
+              maxLength={72}
               placeholder="Enter your password again"
               value={confirmPassword}
               onChange={(event) => setConfirmPassword(event.target.value)}
